@@ -1,4 +1,4 @@
-*.gds filter=lfs diff=lfs merge=lfs -text
+*.gds filter=lfs diff=lfs merge=lfs -binary
 *.def filter=lfs diff=lfs merge=lfs -text
 *.mag filter=lfs diff=lfs merge=lfs -text
 
