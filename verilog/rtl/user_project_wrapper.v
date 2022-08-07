@@ -76,46 +76,54 @@ module user_project_wrapper #(
 
     // User maskable interrupt signals
     output [2:0] user_irq
+    
 );
 
 /*--------------------------------------*/
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+tile tile(
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground
 `endif
 
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
-
-    // MGMT SoC Wishbone Slave
-
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
-
-    // Logic Analyzer
-
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
+    .clk(wb_clk_i),
+    .rst_n(wb_rst_i),
 
     // IO Pads
+ 
 
-    .io_in (io_in),
-    .io_out(io_out),
-    .io_oeb(io_oeb),
+    .dyn0_dNo_valid(io_out[0]),
+    .dyn0_dEo_valid(io_out[1]),
+    .dyn0_dWo_valid(io_out[2]),
+    .dyn0_dSo_valid(io_out[3]),
+    .dyn0_yummyOut_N(io_out[4]),
+    .dyn0_yummyOut_E(io_out[5]),
+    .dyn0_yummyOut_W(io_out[6]),
+    .dyn0_yummyOut_S(io_out[7]),
+    
 
-    // IRQ
-    .irq(user_irq)
+    .dyn1_dNo_valid(io_out[8]),
+    .dyn1_dEo_valid(io_out[9]),
+    .dyn1_dWo_valid(io_out[10]),
+    .dyn1_dSo_valid(io_out[11]),
+    .dyn1_yummyOut_N(io_out[12]),
+    .dyn1_yummyOut_E(io_out[13]),
+    .dyn1_yummyOut_W(io_out[14]),
+    .dyn1_yummyOut_S(io_out[15]),
+    
+
+    .dyn2_dNo_valid(io_out[16]),
+    .dyn2_dEo_valid(io_out[17]),
+    .dyn2_dWo_valid(io_out[18]),
+    .dyn2_dSo_valid(io_out[19]),
+    .dyn2_yummyOut_N(io_out[20]),
+    .dyn2_yummyOut_E(io_out[21]),
+    .dyn2_yummyOut_W(io_out[22]),
+    .dyn2_yummyOut_S(io_out[23]),
+    
 );
 
 endmodule	// user_project_wrapper
