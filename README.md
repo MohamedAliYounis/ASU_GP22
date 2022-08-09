@@ -5,5 +5,7 @@
 | :exclamation: Important Note            |
 |-----------------------------------------|
 # GP_ASU_G22
-## This is the base repo for our graduation project in ASU 22 building Linux-capable RISCV SoC
-![alt text](https://github.com/MohamedAliYounis/ASU_GP22/blob/OpenPiton_AlexCore_ASU_Edition/tile.jpg?raw=true)
+## This is a graduation project in ASU 22 building Linux-capable RISCV integrated with OpenPiton SoC
+![alt text](https://github.com/MohamedAliYounis/ASU_GP22/blob/main/Copy%20of%20Block%20Diagram.drawio.png?raw=true)
+
+The L15 and L2 caches are off-chip due to area constraints.
